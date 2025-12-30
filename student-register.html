@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .register-box {
+      background: #fff;
+      padding: 40px;
+      width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #36d1dc, #5b86e5);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    a {
+      display: block;
+      margin-top: 15px;
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="register-box">
+  <h2>Student Registration</h2>
+  <form id="registerForm">
+    <input type="text" id="studentId" placeholder="Student ID" required>
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="tel" id="mobile" placeholder="Mobile Number" required>
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+    <button type="submit">Register</button>
+  </form>
+  <a href="student-login.html">⬅️ Back to Login</a>
+</div>
+
+<script>
+document.getElementById("registerForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const studentId = document.getElementById("studentId").value.trim();
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const mobile = document.getElementById("mobile").value.trim();
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  if(password !== confirmPassword){
+    alert("❌ Passwords do not match!");
+    return;
+  }
+
+  const students = JSON.parse(localStorage.getItem("students") || "[]");
+  students.push({ studentId, name, email, mobile, username, password });
+  localStorage.setItem("students", JSON.stringify(students));
+
+  alert("✅ Registered Successfully!");
+  window.location.href = "student-login.html";
+});
+</script>
+
+</body>
+</html>

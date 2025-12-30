@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #a18cd1, #fbc2eb);
+    }
+    .header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+    }
+    .section {
+      background: #fff;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+    .profile-img {
+      display: block;
+      margin: 15px auto;
+      width: 100px;
+      border-radius: 50%;
+    }
+
+    /* ✅ Minimized Profile Table */
+    .section.profile {
+      max-width: 500px;
+      margin: 20px auto;
+    }
+    .section.profile table {
+      width: 100%;
+      font-size: 14px;
+    }
+    .section.profile th, .section.profile td {
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">🎓 Student Dashboard</div>
+<div class="container">
+
+  <div class="section profile">
+    <h2>Profile</h2>
+    <img src="https://clipart-library.com/new_gallery/229-2291355_free-asian-cliparts-download-clip-art-girl-.png" alt="Profile Picture" class="profile-img">
+    <table>
+      <tr><th>Name</th><td>Anjali</td></tr>
+      <tr><th>Student ID</th><td>STU1024</td></tr>
+      <tr><th>Year</th><td>1st Year</td></tr>
+      <tr><th>Room Number</th><td>105</td></tr>
+      <tr><th>Block</th><td>B Block</td></tr>
+      <tr><th>Joining Date</th><td>2024-09-01</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Mess Menu</h2>
+    <table>
+      <thead>
+        <tr><th>Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Monday</td><td>Idli & Sambar</td><td>Rice & Curry</td><td>Chapati & Veg Curry</td></tr>
+        <tr><td>Tuesday</td><td>Poori & Kurma</td><td>Dal & Rice</td><td>Fried Rice</td></tr>
+        <tr><td>Wednesday</td><td>Dosa & Chutney</td><td> Biryani</td><td>Chapati & Paneer</td></tr>
+        <tr><td>Thursday</td><td>Upma & Chutney</td><td>Rice & Sambar</td><td>Veg Pulao</td></tr>
+        <tr><td>Friday</td><td>Pongal & Sambar</td><td>Curd Rice</td><td>Noodles & Manchurian</td></tr>
+        <tr><td>Saturday</td><td>Vada & Sambar</td><td>Lemon Rice</td><td>Fried Rice</td></tr>
+        <tr><td>Sunday</td><td>poori & Potato</td><td>Special Meals</td><td>Chapati & Veg Curry</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Raise a Concern</h2>
+    <textarea placeholder="Type your concern here..." style="width:100%; height:100px;"></textarea><br><br>
+    <button>Submit Concern</button>
+  </div>
+
+  <div class="section">
+    <h2>Hostel Maintaince</h2>
+    <ul>
+      <li>🗓️ Hostel Cleaning scheduled on Sunday 10 AM.</li>
+      <li>⚠️ Water maintenance on Wednesday from 2 PM to 4 PM.</li>
+      <li>📢 Monthly meeting on 25th July, 5 PM, Auditorium.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Fee Details</h2>
+    <table>
+      <tr><th>Fee Type</th><th>Amount</th><th>Status</th></tr>
+      <tr><td>Hostel Fee</td><td>₹20,000</td><td>Paid</td></tr>
+      <tr><td>Mess Fee</td><td>₹8,000</td><td>Pending</td></tr>
+      <tr><td>Maintenance Fee</td><td>₹2,000</td><td>Paid</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Attendance Summary</h2>
+    <table>
+      <tr><th>Month</th><th>Attendance (%)</th><th>Remarks</th></tr>
+      <tr><td>May</td><td>95%</td><td>Good</td></tr>
+      <tr><td>June</td><td>92%</td><td>Good</td></tr>
+      <tr><td>July</td><td>88%</td><td>Needs Improvement</td></tr>
+    </table>
+  </div>
+
+</div>
+
+</body>
+</html>

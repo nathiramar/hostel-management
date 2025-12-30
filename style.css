@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: url('https://sbs.strathmore.edu/wp-content/uploads/2024/06/Sisters-Blended-Value-Project-Training-Spurs-a-Multi-Million-Hostel-Project-2.webp'); /* 🖼️ Your image file name */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 32px;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.login-box {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.login-box:hover {
+  transform: scale(1.05); /* Optional hover effect */
+}
+
+.login-box img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+.login-box a {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 18px; /* Increase font size */
+}

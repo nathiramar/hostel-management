@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Details</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px #555;
+}
+
+.filter-buttons, .search-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px;
+}
+
+.filter-buttons button, .search-box input {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.filter-buttons button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.filter-buttons button:nth-child(1) { background: #FFC300; color: #fff; }
+.filter-buttons button:nth-child(2) { background: #FF5733; color: #fff; }
+.filter-buttons button:nth-child(3) { background: #33B5FF; color: #fff; }
+.filter-buttons button:nth-child(4) { background: #9D33FF; color: #fff; }
+.filter-buttons button:nth-child(5) { background: #28A745; color: #fff; }
+
+.search-box input {
+    width: 250px;
+    border: 2px solid #555;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #333;
+    color: #fff;
+}
+
+tr:hover {
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+a {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: crimson;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+a:hover {
+    background: darkred;
+}
+</style>
+</head>
+<body>
+
+<h1>🎓 Student Details</h1>
+
+<div class="filter-buttons">
+  <button onclick="filterYear('All')">All Students</button>
+  <button onclick="filterYear('1st Year')">1st Year</button>
+  <button onclick="filterYear('2nd Year')">2nd Year</button>
+  <button onclick="filterYear('3rd Year')">3rd Year</button>
+  <button onclick="filterYear('Final Year')">Final Year</button>
+  <a href="admin-dashboard.html">❌</a>
+</div>
+
+<div class="search-box">
+  <input type="text" id="searchInput" onkeyup="searchStudent()" placeholder="🔍 Search by Name...">
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>ID</th>
+      <th>Mobile</th>
+      <th>Year</th>
+      <th>Joining Date</th>
+      <th>Guardian Name</th>
+      <th>Guardian Mobile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Ajay Kumar</td><td>S101</td><td>9876543210</td><td>1st Year</td><td>2024-09-01</td><td>Ramesh Kumar</td><td>9876540000</td></tr>
+    <tr><td>Meena Rani</td><td>S102</td><td>9876501234</td><td>1st Year</td><td>2024-09-05</td><td>Sunita Rani</td><td>9876500000</td></tr>
+    <tr><td>Rahul Singh</td><td>S201</td><td>9988776655</td><td>2nd Year</td><td>2023-08-25</td><td>Arun Singh</td><td>9988700000</td></tr>
+    <tr><td>Kavya Das</td><td>S202</td><td>8977665544</td><td>2nd Year</td><td>2023-09-10</td><td>Sarita Das</td><td>8977600000</td></tr>
+    <tr><td>Deepak Verma</td><td>S301</td><td>7789776655</td><td>3rd Year</td><td>2022-09-10</td><td>Mahesh Verma</td><td>7789700000</td></tr>
+    <tr><td>Anjali Sharma</td><td>S302</td><td>7788776655</td><td>3rd Year</td><td>2022-08-28</td><td>Seema Sharma</td><td>7788700000</td></tr>
+    <tr><td>Mohit Jain</td><td>S401</td><td>9988223344</td><td>Final Year</td><td>2021-09-02</td><td>Ravi Jain</td><td>9988200000</td></tr>
+    <tr><td>Sneha Kapoor</td><td>S402</td><td>9988112233</td><td>Final Year</td><td>2021-08-20</td><td>Neeta Kapoor</td><td>9988100000</td></tr>
+  </tbody>
+</table>
+
+<script>
+function filterYear(year) {
+  const rows = document.querySelectorAll("tbody tr");
+  rows.forEach(row => {
+    const yearText = row.cells[3].innerText.trim();
+    row.style.display = (year === 'All' || yearText === year) ? "" : "none";
+  });
+}
+
+function searchStudent() {
+  const input = document.getElementById("searchInput").value.toUpperCase();
+  const rows = document.querySelectorAll("tbody tr");
+  rows.forEach(row => {
+    const name = row.cells[0].innerText.toUpperCase();
+    row.style.display = name.includes(input) ? "" : "none";
+  });
+}
+</script>
+
+</body>
+</html>

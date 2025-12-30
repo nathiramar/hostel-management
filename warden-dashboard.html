@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Warden Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #74ebd5, #ACB6E5);
+    }
+
+    .header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    .section {
+      background-color: white;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+
+    .summary-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .summary-box {
+      flex: 1;
+      min-width: 200px;
+      background: linear-gradient(135deg, #f6d365, #fda085);
+      color: white;
+      font-size: 20px;
+      text-align: center;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .filter-buttons, .search-box {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .filter-buttons button, .search-box input {
+      padding: 12px 18px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .filter-buttons button {
+      color: white;
+    }
+
+    .all { background: #0fb56d; }
+    .first { background: #ff8800; }
+    .second { background: #28b463; }
+    .third { background: #ff4d4d; }
+    .final { background: #8e44ad; }
+
+    .search-box input {
+      width: 300px;
+      border: 1px solid #ccc;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+
+    tr:hover { background-color: #f1f1f1; }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      font-size: 16px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+
+    button.submit-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button.submit-btn:hover {
+      background: #219150;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">🏨 Warden Dashboard</div>
+
+<div class="container">
+
+  <div class="section">
+    <h2>Room Allocation Summary</h2>
+    <div class="summary-boxes">
+      <div class="summary-box">Total Rooms: <br><b>100</b></div>
+      <div class="summary-box">Occupied: <br><b>85</b></div>
+      <div class="summary-box">Vacant: <br><b>15</b></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Student Concern</h2>
+    <textarea placeholder="Enter concern here..."></textarea><br>
+    <button class="submit-btn">Submit Concern</button>
+  </div>
+
+  <div class="section">
+    <h2>Student Details</h2>
+
+    <div class="filter-buttons">
+      <button class="all" onclick="filterYear('All')">All Students</button>
+      <button class="first" onclick="filterYear('1st Year')">1st Year</button>
+      <button class="second" onclick="filterYear('2nd Year')">2nd Year</button>
+      <button class="third" onclick="filterYear('3rd Year')">3rd Year</button>
+      <button class="final" onclick="filterYear('Final Year')">Final Year</button>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search by Name...">
+    </div>
+
+    <table id="studentsTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+      <th>ID</th>
+      <th>Mobile</th>
+      <th>Year</th>
+      <th>Joining Date</th>
+      <th>Guardian Name</th>
+      <th>Guardian Mobile</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Ajay Kumar</td><td>S101</td><td>9876543210</td><td>1st Year</td><td>2024-09-01</td><td>Ramesh Kumar</td><td>9876540000</td></tr>
+    <tr><td>Meena Rani</td><td>S102</td><td>9876501234</td><td>1st Year</td><td>2024-09-05</td><td>Sunita Rani</td><td>9876500000</td></tr>
+    <tr><td>Rahul Singh</td><td>S201</td><td>9988776655</td><td>2nd Year</td><td>2023-08-25</td><td>Arun Singh</td><td>9988700000</td></tr>
+    <tr><td>Kavya Das</td><td>S202</td><td>8977665544</td><td>2nd Year</td><td>2023-09-10</td><td>Sarita Das</td><td>8977600000</td></tr>
+    <tr><td>Deepak Verma</td><td>S301</td><td>7789776655</td><td>3rd Year</td><td>2022-09-10</td><td>Mahesh Verma</td><td>7789700000</td></tr>
+    <tr><td>Anjali Sharma</td><td>S302</td><td>7788776655</td><td>3rd Year</td><td>2022-08-28</td><td>Seema Sharma</td><td>7788700000</td></tr>
+    <tr><td>Mohit Jain</td><td>S401</td><td>9988223344</td><td>Final Year</td><td>2021-09-02</td><td>Ravi Jain</td><td>9988200000</td></tr>
+    <tr><td>Sneha Kapoor</td><td>S402</td><td>9988112233</td><td>Final Year</td><td>2021-08-20</td><td>Neeta Kapoor</td><td>9988100000</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  let currentYearFilter = 'All';
+
+  function filterYear(year) {
+    currentYearFilter = year;
+    filterTable();
+  }
+
+  function filterTable() {
+    let input = document.getElementById("searchInput").value.toUpperCase();
+    let rows = document.querySelectorAll('#studentsTable tbody tr');
+
+    rows.forEach(row => {
+      let name = row.cells[0].textContent.toUpperCase();
+      let year = row.getAttribute('data-year');
+      let yearMatch = (currentYearFilter === 'All' || year === currentYearFilter);
+      let nameMatch = name.includes(input);
+      row.style.display = (yearMatch && nameMatch) ? "" : "none";
+    });
+  }
+</script>
+
+</body>
+</html>

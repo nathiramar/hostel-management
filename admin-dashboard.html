@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #2f80ed;
+      color: white;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .nav-links li a:hover {
+      background: #1d69d4;
+    }
+
+    .container {
+      padding: 30px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #2f80ed;
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      flex: 1 1 200px;
+      max-width: 250px;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      font-size: 18px;
+    }
+
+    .card strong {
+      font-size: 28px;
+      color: #2f80ed;
+    }
+
+    .staff {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .staff-card {
+      flex: 1 1 200px;
+      max-width: 250px;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .staff-card h3 {
+      margin-bottom: 10px;
+    }
+
+    /* Colors */
+    .blue { background: #a0c4ff; }
+    .orange { background: #ffd6a5; }
+    .sky { background: #bde0fe; }
+    .gold { background: #ffeeb7; }
+    .violet { background: #dabfff; }
+
+    .yellow { background: #ffe066; }
+    .pink { background: #ffafcc; }
+    .red { background: #ffadad; }
+
+    @media (max-width: 768px){
+      .stats, .staff {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">🏨 Hostel Management</div>
+  <ul class="nav-links">
+    <li><a href="student-details.html">Students</a></li>
+    <li><a href="staff.html">Staff</a></li>
+    <li><a href="admin-login.html" class="logout-btn">Logout</a></li>
+
+  </ul>
+</nav>
+
+<!-- Main Dashboard -->
+<div class="container">
+  <h1>Welcome Admin Dashboard</h1>
+  
+  <div class="stats">
+    <div class="card blue">🎓 Total Students<br><strong>120</strong></div>
+    <div class="card orange">🎓 1st Year<br><strong>30</strong></div>
+    <div class="card sky">🎓 2nd Year<br><strong>35</strong></div>
+    <div class="card gold">🎓 3rd Year<br><strong>28</strong></div>
+    <div class="card violet">🎓 Final Year<br><strong>27</strong></div>
+    <div style="text-align:center; margin: 30px 0;">
+  <div style="text-align:center; margin-top: 40px; margin-bottom: 20px;">
+    <a href="admin-login.html" style="
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+">⬅️ Go Back</a>
+
+</div>
+
+</div>
+
+
+    
+  </div>
+
+  <div class="staff">
+    <div class="staff-card blue">
+      <h3>👨‍✈️ Warden</h3>
+      <p>Name: Ms.Rathika</p>
+      <p>ID: WRD001</p>
+      <p>Contact: 9876543210</p>
+    </div>
+    <div class="staff-card yellow">
+      <h3>👩‍🍳 Mess Controller</h3>
+      <p>Name: Mrs.Karthika</p>
+      <p>ID: MESS101</p>
+      <p>Contact: 9876561234</p>
+    </div>
+    <div class="staff-card pink">
+      <h3>📋 Hostel Clerk</h3>
+      <p>Name: Ms.Muthulakshmi</p>
+      <p>ID: CLK501</p>
+      <p>Contact: 9998877665</p>
+    </div>
+    <div class="staff-card red">
+      <h3>💉 Medical Incharge</h3>
+      <p>Name: Mrs.Rubini</p>
+      <p>ID: NRS303</p>
+      <p>Contact: 9988776655</p>
+  
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
